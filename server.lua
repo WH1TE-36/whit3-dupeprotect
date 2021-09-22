@@ -10,7 +10,7 @@ Citizen.CreateThread(function()
         for i = 1, #Players do
             local xPlayer = ESX.GetPlayerFromId(Players[i])
             for k,v in pairs(Config.DupeBlocker) do
-                local item = xPlayer.getQuantity(v.item)
+                local item = xPlayer.getInventoryItem(v.item)["count"]
                 if item >= v.count then
         DropPlayer(xPlayer.source, "Dupe Yapma La Gardass")
             end
